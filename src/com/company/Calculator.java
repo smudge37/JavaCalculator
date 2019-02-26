@@ -1,17 +1,17 @@
 package com.company;
+
+import java.util.ArrayList;
+
 public class Calculator {
     public void runCalculation() {
         CalculatorUI ui = new CalculatorUI();
 
-        System.out.println("Please enter the first integer to operate on.");
-        int x = ui.promptForInteger();
-        System.out.println("Please enter the second integer to operate on.");
-        int y = ui.promptForInteger();
+        ArrayList<Integer> operands = ui.promptForOperands();
 
         Operation operation = ui.promptForOperation();
-        int answer = operation.operate(x, y);
+        int answer = operation.operate(operands);
 
-        ui.printAnswer(x, y, operation, answer);
+        ui.printAnswer(operands, operation, answer);
 
         if (ui.userWantsNewCalculation()) {
             runCalculation();
