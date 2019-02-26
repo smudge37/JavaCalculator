@@ -4,3 +4,6 @@
 
 #Git
 .git/
+
+#Compiled Code
+out/
